@@ -1,8 +1,8 @@
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 import { VStack } from "@chakra-ui/react"
-import deploy from '../deploy';
-import Escrow from '../Escrow';
+import deploy from '../utils/deploy';
+import Escrow from '../components/Escrow';
 import Header from '../components/Header'
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -61,43 +61,43 @@ export default function Home() {
     >
         <Header/>
         <div className="contract">
-        <h1> New Contract </h1>
-        <label>
-            Arbiter Address
-            <input type="text" id="arbiter" />
-        </label>
+            <h1> New Contract </h1>
+            <label>
+                Arbiter Address
+                <input type="text" id="arbiter" />
+            </label>
 
-        <label>
-            Beneficiary Address
-            <input type="text" id="beneficiary" />
-        </label>
+            <label>
+                Beneficiary Address
+                <input type="text" id="beneficiary" />
+            </label>
 
-        <label>
-            Deposit Amount (in Wei)
-            <input type="text" id="wei" />
-        </label>
+            <label>
+                Deposit Amount (in Wei)
+                <input type="text" id="wei" />
+            </label>
 
-        <div
-            className="button"
-            id="deploy"
-            onClick={(e) => {
-            e.preventDefault();
+            <div
+                className="button"
+                id="deploy"
+                onClick={(e) => {
+                e.preventDefault();
 
-            newContract();
-            }}
-        >
-            Deploy
-        </div>
+                newContract();
+                }}
+            >
+                Deploy
+            </div>
         </div>
 
         <div className="existing-contracts">
-        <h1> Existing Contracts </h1>
+            <h1> Existing Contracts </h1>
 
-        <div id="container">
-            {escrows.map((escrow) => {
-            return <Escrow key={escrow.address} {...escrow} />;
-            })}
-        </div>
+            <div id="container">
+                {escrows.map((escrow) => {
+                return <Escrow key={escrow.address} {...escrow} />;
+                })}
+            </div>
         </div>
     </VStack>
   )

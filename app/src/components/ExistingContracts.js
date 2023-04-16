@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import getAllContracts from "../services/getAllContract"
+import getAllContracts from "../servicesAPI/getAllContract"
 import Escrow from '../components/Escrow';
 import Card from './Card';
 import { Text } from "@chakra-ui/react"
 
-export default function ExistingContracts({ escrows }) {
+export default function ExistingContracts() {
     const [contractsList, setContractsList] = useState([]) 
     useEffect(()=>{
         if (contractsList.length === 0) {
@@ -15,7 +15,7 @@ export default function ExistingContracts({ escrows }) {
     
             listAllContracts()
         }
-    },[])
+    },[contractsList])
 
     return (
         <Card className="existing-contracts">

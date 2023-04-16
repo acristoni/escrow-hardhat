@@ -1,7 +1,6 @@
-import deploy from '../utils/deploy';
-import { ethers } from 'ethers';
-import approve from './approve'
-import postNewContract from '../services/postNewContract'
+import deploy from './deploy'
+import { ethers } from 'ethers'
+import postNewContract from '../servicesAPI/postNewContract'
 
 async function newContract(signer, setEscrows, escrows) {
     const beneficiary = document.getElementById('beneficiary').value;

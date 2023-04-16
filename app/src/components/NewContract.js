@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Text } from "@chakra-ui/react"
-import getAccounts from "../utils/getAccounts"
-import newContract from "../utils/newContract"
+import getAccounts from "../servicesBlockChain/getAccounts"
+import newContract from "../servicesBlockChain/newContract"
 import InputFloatLabel from "./InputFloatLabel";
 import Card from "./Card"
 import ButtonStandart from "./ButtonStandart"

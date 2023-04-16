@@ -44,10 +44,7 @@ export default function Home() {
                         escrows={escrows}
                         setEscrows={setEscrows}
                     /> :
-                    <ExistingContracts 
-                        escrows={escrows}
-                        section={section}
-                    />
+                    <ExistingContracts section={section}/>
                 }
             </VStack>
         </VStack>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
-import getAccounts from "../utils/getAccounts"
+import getAccounts from "../servicesBlockChain/getAccounts"
 import Card from "./Card"
-import handleApprove from '../utils/handleApprove'
+import handleApprove from '../servicesBlockChain/handleApprove'
 import EscrowDetail from './EscrowDetail'
 import ButtonStandart from "./ButtonStandart"
 

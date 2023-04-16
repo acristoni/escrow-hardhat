@@ -1,44 +1,46 @@
 import { useState, useEffect } from "react"
+import { Text } from "@chakra-ui/react"
 import getAccounts from "../utils/getAccounts"
 import newContract from "../utils/newContract"
+import InputFloatLabel from "./InputFloatLabel";
+import Card from "./Card"
+import ButtonStandart from "./ButtonStandart"
 
 export default function NewContract({ setEscrows, escrows }) {
-    const [account, setAccount] = useState();
-    const [signer, setSigner] = useState();
+    const [signer, setSigner] = useState()
 
     useEffect(() => {
-        getAccounts(setAccount, setSigner);
-    }, [account]);
+        getAccounts(setSigner);
+    }, []);
+
+    const handleDeployButton = (e) => {
+        e.preventDefault();
+        newContract(signer, setEscrows, escrows);
+    }
 
     return (
-        <div className="contract">
-            <h1> New Contract </h1>
-            <label>
-                Arbiter Address
-                <input type="text" id="arbiter" />
-            </label>
-
-            <label>
-                Beneficiary Address
-                <input type="text" id="beneficiary" />
-            </label>
-
-            <label>
-                Deposit Amount (in Wei)
-                <input type="text" id="wei" />
-            </label>
-
-            <div
-                className="button"
-                id="deploy"
-                onClick={(e) => {
-                e.preventDefault();
-
-                newContract(signer, setEscrows, escrows);
-                }}
-            >
-                Deploy
-            </div>
-        </div>
+        <Card className="contract">
+            <Text as='b' fontSize="2xl"> New Contract </Text>
+            <InputFloatLabel 
+                inputId="arbiter"
+                Label="Arbiter Address"
+                isRequired
+            />
+            <InputFloatLabel 
+                inputId="beneficiary"
+                Label="Beneficiary Address"
+                isRequired
+            />
+            <InputFloatLabel 
+                inputId="wei"
+                Label="Deposit Amount (in Wei)"
+                isRequired
+            />
+            <ButtonStandart 
+                label="Deploy"
+                onClick={handleDeployButton}
+                idButton="deploy"
+            />
+        </Card>
     )
 }

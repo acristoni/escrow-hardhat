@@ -1,11 +1,14 @@
 import { ethers } from 'ethers';
 
-async function getAccounts(setAccount, setSigner) {
+async function getAccounts(setSigner, setAccount) {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
-
-    const accounts = await provider.send('eth_requestAccounts', []);
-    setAccount(accounts[0]);
-    setSigner(provider.getSigner());
+    if (setAccount) {
+        const accounts = await provider.send('eth_requestAccounts', []);
+        setAccount(accounts[0]);
+    }
+    if (setSigner) {
+        setSigner(provider.getSigner());
+    }
 }
 
 export default getAccounts;

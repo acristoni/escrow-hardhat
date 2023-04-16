@@ -1,15 +1,30 @@
+import { useEffect, useState } from 'react';
+import getAllContracts from "../services/getAllContract"
 import Escrow from '../components/Escrow';
+import Card from './Card';
+import { Text } from "@chakra-ui/react"
 
 export default function ExistingContracts({ escrows }) {
-    return (
-        <div className="existing-contracts">
-            <h1> Existing Contracts </h1>
+    const [contractsList, setContractsList] = useState([]) 
+    useEffect(()=>{
+        if (contractsList.length === 0) {
+            const listAllContracts = async() => {
+                const response = await getAllContracts()
+                setContractsList(response)
+            }
+    
+            listAllContracts()
+        }
+    },[])
 
-            <div id="container">
-                {escrows.map((escrow) => {
-                    return <Escrow key={escrow.address} {...escrow} />;
-                })}
-            </div>
-        </div>
+    return (
+        <Card className="existing-contracts">
+            <Text as='b' fontSize="2xl"> Existing Contracts </Text>
+            {
+                contractsList && contractsList.length > 0 &&
+                contractsList.map((escrow, index) => {
+                    return <Escrow key={index} escrow={escrow} />;
+            })}
+        </Card>
     )
 }

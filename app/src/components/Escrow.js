@@ -1,37 +1,32 @@
-export default function Escrow({
-  address,
-  arbiter,
-  beneficiary,
-  value,
-  handleApprove,
-}) {
-  return (
-    <div className="existing-contract">
-      <ul className="fields">
-        <li>
-          <div> Arbiter </div>
-          <div> {arbiter} </div>
-        </li>
-        <li>
-          <div> Beneficiary </div>
-          <div> {beneficiary} </div>
-        </li>
-        <li>
-          <div> Value </div>
-          <div> {value} </div>
-        </li>
-        <div
-          className="button"
-          id={address}
-          onClick={(e) => {
-            e.preventDefault();
+import { useState, useEffect } from "react"
+import getAccounts from "../utils/getAccounts"
+import Card from "./Card"
+import handleApprove from '../utils/handleApprove'
+import EscrowDetail from './EscrowDetail'
+import ButtonStandart from "./ButtonStandart"
 
-            handleApprove();
-          }}
-        >
-          Approve
-        </div>
-      </ul>
-    </div>
+export default function Escrow({ escrow }) {
+  const [signer, setSigner] = useState();
+
+  useEffect(() => {
+    getAccounts(setSigner);
+  }, []);
+
+  const handleApproveButton = (e) => {
+    e.preventDefault();
+    handleApprove(escrow, signer);
+  }
+
+  return (
+    <Card className="existing-contract">
+          <EscrowDetail title="Arbiter" detail={escrow.arbiter}/>
+          <EscrowDetail title="Beneficiary" detail={escrow.beneficiary}/>
+          <EscrowDetail title="Value" detail={escrow.value}/>
+          <ButtonStandart 
+              label="Approve"
+              onClick={handleApproveButton}
+              idButton={escrow.address}
+          />
+    </Card>
   );
 }

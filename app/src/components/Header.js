@@ -54,6 +54,7 @@ import {
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
               fontWeight={700}
+              fontSize="3xl"
               color={useColorModeValue('gray.800', 'white')}>
               ScrowDapp
             </Text>
@@ -218,7 +219,7 @@ import {
   const NAV_ITEMS = [
     {
     label: 'New Contract',
-    href: '#',
+    href: '?newcontract',
     },
     {
       label: 'Existing Contracts',
@@ -226,12 +227,12 @@ import {
         {
           label: 'Approved',
           subLabel: 'Contracts already approved',
-          href: '#',
+          href: '?approved',
         },
         {
           label: 'Waiting...',
           subLabel: 'Contracts to be approved by a arbiter',
-          href: '#',
+          href: '?waiting',
         },
       ],
     },

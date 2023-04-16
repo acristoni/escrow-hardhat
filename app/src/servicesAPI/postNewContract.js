@@ -1,4 +1,4 @@
-export default async function postNewContract(escrow) {
+export default async function postNewContract(escrow, setSection) {
     const headersList = {
         "Accept": "*/*",
         "Content-Type": "application/json"
@@ -13,5 +13,7 @@ export default async function postNewContract(escrow) {
     });
        
     const data = await response.text();
-    console.log(data);
+    if (data) {
+        setSection("Waiting")
+    }
 }

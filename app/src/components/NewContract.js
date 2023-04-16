@@ -6,7 +6,7 @@ import InputFloatLabel from "./InputFloatLabel";
 import Card from "./Card"
 import ButtonStandart from "./ButtonStandart"
 
-export default function NewContract({ setEscrows, escrows }) {
+export default function NewContract({ setEscrows, escrows, setSection }) {
     const [signer, setSigner] = useState()
 
     useEffect(() => {
@@ -15,7 +15,7 @@ export default function NewContract({ setEscrows, escrows }) {
 
     const handleDeployButton = (e) => {
         e.preventDefault();
-        newContract(signer, setEscrows, escrows);
+        newContract(signer, setEscrows, escrows, setSection);
     }
 
     return (

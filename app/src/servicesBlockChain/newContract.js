@@ -2,7 +2,7 @@ import deploy from './deploy'
 import { ethers } from 'ethers'
 import postNewContract from '../servicesAPI/postNewContract'
 
-async function newContract(signer, setEscrows, escrows) {
+async function newContract(signer, setEscrows, escrows, setSection) {
     const beneficiary = document.getElementById('beneficiary').value;
     const arbiter = document.getElementById('arbiter').value;
     const value = ethers.BigNumber.from(document.getElementById('wei').value);
@@ -13,8 +13,9 @@ async function newContract(signer, setEscrows, escrows) {
       arbiter,
       beneficiary,
       value: value.toString(),
+      approved: false
     };
-    postNewContract(escrow)
+    postNewContract(escrow, setSection)
     setEscrows([...escrows, escrow]);
 }
 

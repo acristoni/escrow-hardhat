@@ -10,7 +10,7 @@ export default function Home() {
 
     useEffect(()=>{
         const queryString = window.location.search;
-        
+
         switch (queryString) {
             case "?newcontract":
                 setSection("NewContract")
@@ -43,8 +43,12 @@ export default function Home() {
                     <NewContract 
                         escrows={escrows}
                         setEscrows={setEscrows}
+                        setSection={setSection}
                     /> :
-                    <ExistingContracts section={section}/>
+                    <ExistingContracts 
+                        section={section} 
+                        setSection={setSection}
+                    />
                 }
             </VStack>
         </VStack>

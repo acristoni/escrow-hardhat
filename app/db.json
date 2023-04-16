@@ -1,34 +1,44 @@
 {
   "contracts": [
     {
-      "id": 1,
-      "address": "0x663F3ad617193148711d28f5334eE4Ed07016602",
-      "arbiter": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
-      "beneficiary": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
-      "value": "123456789987654321123"
-    },
-    {
-      "address": "0x663F3ad617193148711d28f5334eE4Ed07016602",
-      "arbiter": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
-      "beneficiary": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
-      "handleApprove": "async () => {…}",
-      "value": "123456789987654321123",
-      "id": 2
-    },
-    {
-      "address": "0x663F3ad617193148711d28f5334eE4Ed07016602",
-      "arbiter": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
-      "beneficiary": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
-      "handleApprove": "async () => {…}",
-      "value": "123456789987654321123",
-      "id": 3
-    },
-    {
       "address": "0x94B75AA39bEC4cB15e7B9593C315aF203B7B847f",
       "arbiter": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
       "beneficiary": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
       "value": "1234567899876543211",
+      "approved": true,
+      "id": 1
+    },
+    {
+      "address": "0x59F2f1fCfE2474fD5F0b9BA1E73ca90b143Eb8d0",
+      "arbiter": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "beneficiary": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
+      "value": "789456123789456",
+      "approved": true,
+      "id": 2
+    },
+    {
+      "address": "0x43ca3D2C94be00692D207C6A1e60D8B325c6f12f",
+      "arbiter": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "beneficiary": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "value": "789456123789456123",
+      "approved": false,
+      "id": 3
+    },
+    {
+      "address": "0x0f5D1ef48f12b6f691401bfe88c2037c690a6afe",
+      "arbiter": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
+      "beneficiary": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "value": "2456789987654321123",
+      "approved": true,
       "id": 4
+    },
+    {
+      "address": "0x13D69Cf7d6CE4218F646B759Dcf334D82c023d8e",
+      "arbiter": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
+      "beneficiary": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "value": "11111111111111111111",
+      "approved": true,
+      "id": 5
     }
   ]
 }

@@ -18,9 +18,12 @@ After you have installed hardhat locally, you can use commands to test and compi
 
 Compile the contracts using `npx hardhat compile`. The artifacts will be placed in the `/app` folder, which will make it available to the front-end. This path configuration can be found in the `hardhat.config.js` file.
 
-## Front-End
+## Back-End
 
 `cd` into the `/app` directory and run `npm install`
 
-To run the front-end application run `npm start` from the `/app` directory. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To run the back-end application run `json-server --watch db.json` from the `/app` directory. On [http://localhost:3003] it'll be runing a json mock server.
 
+## Front-End
+
+To run the front-end application run `npm start` from the `/app` directory. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

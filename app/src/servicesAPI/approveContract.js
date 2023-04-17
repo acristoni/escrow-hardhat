@@ -14,6 +14,7 @@ export default async function approveContract(contract, setSection) {
        
     const data = await response.text();
     if (data) {
+        document.location.reload()
         setSection("Approved")
     }
 }

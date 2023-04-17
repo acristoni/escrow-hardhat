@@ -32,8 +32,8 @@ export default function NewContract({ setEscrows, escrows, setSection }) {
                 isRequired
             />
             <InputFloatLabel 
-                inputId="wei"
-                Label="Deposit Amount (in Wei)"
+                inputId="eth"
+                Label="Deposit Amount (in ETH)"
                 isRequired
             />
             <ButtonStandart 

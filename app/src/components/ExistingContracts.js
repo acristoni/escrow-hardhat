@@ -6,6 +6,7 @@ import { Text } from "@chakra-ui/react"
 
 export default function ExistingContracts({ setSection, section }) {
     const [contractsList, setContractsList] = useState([])
+    console.log("🚀 ~ file: ExistingContracts.js:9 ~ ExistingContracts ~ contractsList:", contractsList)
 
     useEffect(()=>{
         if (contractsList.length === 0) {

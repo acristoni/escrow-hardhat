@@ -21,7 +21,7 @@
       "arbiter": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
       "beneficiary": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
       "value": "789456123789456123",
-      "approved": false,
+      "approved": true,
       "id": 3
     },
     {
@@ -39,6 +39,22 @@
       "value": "11111111111111111111",
       "approved": true,
       "id": 5
+    },
+    {
+      "address": "0x59F2f1fCfE2474fD5F0b9BA1E73ca90b143Eb8d0",
+      "arbiter": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "beneficiary": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
+      "value": "12345678923456789123",
+      "approved": true,
+      "id": 6
+    },
+    {
+      "address": "0x73511669fd4dE447feD18BB79bAFeAC93aB7F31f",
+      "arbiter": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "beneficiary": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "value": "13347000000000000000",
+      "approved": false,
+      "id": 7
     }
   ]
 }

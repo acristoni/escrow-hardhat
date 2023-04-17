@@ -8,6 +8,7 @@ const handleApprove = async (contractData, signer, setSection) => {
     const escrowContract = new ethers.Contract(contractData.address, abiEscrow, signer)
 
     escrowContract.on('Approved', () => {
+      console.log("deu certo")
       approveContract(contractData, setSection);
       document.getElementById(escrowContract.address).className =
         'complete';
